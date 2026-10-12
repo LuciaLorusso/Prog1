@@ -2,6 +2,8 @@
 
 print ("Hola Mundo")
 
+#
+
 #b) Ingresar un dato por input y luego mostrarlo por consola.
 #c) Ingresar nombre y edad por input, luego mostrarlos concatenados.
 #Ejemplo: "Usted se llama Pedro y tiene 65 años."
