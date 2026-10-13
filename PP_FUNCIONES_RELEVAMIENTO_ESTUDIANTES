@@ -1,11 +1,11 @@
 import PP_CARGAR_ESTUDIANTE
-from CARGAR_ESTUDIANTE import *
+from PP_CARGAR_ESTUDIANTE import *
 
 
 def cargar_datos_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #cargar datos de 30 estudiantes 
 
-    for i in range(len(legajos)):
+    for i in range(30):
         legajos.append(cargar_legajo())
         nombres_y_apellidos.append(cargar_n_y_ap())
         generos.append(cargar_genero())
@@ -41,13 +41,13 @@ def ordenar_estudiantes_por_promedio(promedios:list, legajos:list, nombres_y_ape
     for i in range(tamanio):
         for j in range(0, tamanio - i - 1):
             if promedios[j] < promedios[j+1]:
-                intercambio (i,legajo)
-                intercambio (i,nombres_y_apellidos)
-                intercambio (i,generos)
-                intercambio (i,promedios)
-                intercambio (i,primeras_notas)
-                intercambio (i,segundas_notas)
-            i += 1
+                intercambio (j,legajos)
+                intercambio (j,nombres_y_apellidos)
+                intercambio (j,generos)
+                intercambio (j,promedios)
+                intercambio (j,primeras_notas)
+                intercambio (j,segundas_notas)
+
 
 def intercambio (indice:int, lista:list):
     #intercambiar elemento del indice i por la del inice i+1

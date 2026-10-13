@@ -36,7 +36,7 @@ while opcion != 7:
 
         case 3: 
             if legajos != []:
-                promedios = ccalcular_promedio_de_30_estudiantes(pri_notas, seg_notas)     
+                promedios = calcular_promedio_de_30_estudiantes(pri_notas, seg_notas)     
             else: 
                 print("Primero se debe cargar los datos de los estudiantes")    
 
