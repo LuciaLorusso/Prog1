@@ -1,25 +1,32 @@
+from VALIDAR_ESTUDIANTE import *
 
-def cargar_datos_30_estudiantes():
+def cargar_datos_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #
-    print(f"Se cargaron datos de {i} estudiantes")
-    return
+    i=1
+    for i in range(30):
+        legajos.append(cargar_legajos())
+        nombres_y_apellidos.append(cargar_apellido())
+        generos.append(cargar_genero())
+        primeras_notas.append(cargar_nota())
+        segundas_notas.append(cargar_nota())
+                            
 
-def mostrar_informe_30_estudiantes (informe_estudiantes,cant:):
-    #
-return
-
-def calcular_promedios_estudiantes(informe_estudiantes):
-    #
-    return
-
-def  ordenar_estudiantes_por_promedio(informe_estudiantes):
-    #
-    return
-
-def estudiante_mayor_promedio(informe_estudiantes):
+def mostrar_informe_30_estudiantes(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #
     return
 
-def buscar_estudiante_por_legajo(informe_estudiantes):
+def calcular_promedios_estudiantes(primeras_notas:list, segundas_notas:list):
+    #
+    return
+
+def  ordenar_estudiantes_por_promedio(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #
+    return
+
+def estudiante_mayor_promedio(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #
+    return
+
+def buscar_estudiante_por_legajo(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #
     return

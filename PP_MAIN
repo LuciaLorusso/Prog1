@@ -1,39 +1,66 @@
 from PP_FUNCIONES_RELEVAMIENTO_ESTUDIANTES import *
 
+# Menú de opciones del sistema de gestión de una institución educativa 
+# que releva los datos de 30 estudiantes
+
+legajos, nyaps, generos, pri_notas, seg_notas = [], [], [], [], []
+promedios = []
+
+def mostrar_menu():
+    print("1 - Cargar de datos de estudiantes")
+    print("2 - Mostrar informe de estudiantes")
+    print("3 - Calcular promedios")
+    print("4 - Mostrar estudiantes ordenados por promedio (DESC)")
+    print("5 - Mostrar estudiante(s) con mayor promedio")
+    print("6 - Buscar estudiante por legajo")
+    print("7 - Salir")
+
 print(" SISTEMA DE GESTIÓN ")
-print("MENÚ")
-print("1 - Cargar de datos de estudiantes")
-print("2 - Mostrar informe de estudiantes")
-print("3 - Calcular promedios")
-print("4 - Mostrar estudiantes ordenados por promedio (DESC)")
-print("5 - Mostrar estudiante(s) con mayor promedio")
-print("6 - Buscar estudiante por legajo")
-print("7 - Salir")
+print(" MENÚ ")
+print(" El primer paso debe ser cargar los datos de los estudiantes ")
+mostrar_menu()
 
 opcion = int(input("Seleccione una opción del menú (1-7): "))
 
 while opcion != 7:
     match opcion:
         case 1: 
-            informe_estudiantes = cargar_datos_30_estudiantes()
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+            cargar_datos_30_estudiantes(legajos, nyaps, generos, pri_notas, seg_notas)
+
         case 2: 
-            mostrar_informe_30_estudiantes(informe_estudiantes,cantidad_estudiantes)
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+            if legajos != []:
+                mostrar_informe_30_estudiantes(legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")      
+
         case 3: 
-            calcular_promedios_estudiantes(informe_estudiantes)
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+            if legajos != []:
+                calcular_promedios_estudiantes(legajos, nyaps, generos, pri_notas, seg_notas)     
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")    
+
         case 4: 
-            ordenar_estudiantes_por_promedio(informe_estudiantes)
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+            if legajos != []:
+                ordenar_estudiantes_por_promedio(legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")
+
         case 5: 
-            estudiante_mayor_promedio(informe_estudiantes)
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+            if promedios != []:
+                estudiante_mayor_promedio(legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe calcular el promedio de los estudiantes")
+
         case 6: 
-            buscar_estudiante_por_legajo(informe_estudiantes)
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+            if legajos != []:
+                buscar_estudiante_por_legajo(legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")
+
         case _:
             print("Por favor, ingrese una opción válida")
-            opcion = int(input("Seleccione una opción del menú (1-7): "))
+
+    mostrar_menu()
+    opcion = int(input("Seleccione una opción del menú (1-7): ")) 
 
 print("FIN")

@@ -1,0 +1,21 @@
+
+
+def cargar_legajos():
+    #
+
+    return legajo
+
+def cargar_n_y_ap():
+    #
+
+    return nyap
+
+def cargar_genero():
+    #
+
+    return genero
+
+def cargar_nota():
+    #
+    
+    return nota
