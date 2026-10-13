@@ -1,4 +1,4 @@
-
+#funciones para cargar estudiante
 
 def cargar_legajo():
     #cargar legajo del estudiante
