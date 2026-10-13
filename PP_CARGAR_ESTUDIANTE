@@ -1,0 +1,40 @@
+
+
+def cargar_legajos():
+    #cargar legajo del estudiante
+    legajo = int(input("Ingresar Legajo: "))
+    return legajo
+
+def cargar_n_y_ap():
+    #cargar nombre y apellido del estudiante
+    nyap = input("Ingresar Apellido y Nombre: ")
+    return nyap
+
+def cargar_genero():
+    #cargar genero del estudiante
+    genero = input("Ingresar Género ( F | M | X ): ")
+
+    while genero != "F" and genero != "M"and genero != "X":
+            genero = input("No es correcto, ingrese género ( F | M | X ): ")
+
+    if genero == "F":
+        print("FEMENINO")
+    elif genero == "X":
+        print("NO BINARIE")
+    else:
+        print("MASCULINO")
+    return genero
+
+def cargar_primera_nota():
+    #cargar primera nota del estudiante
+    nota = input("Ingresar Nota del primer parcial: ")
+    while nota < 0 or nota >10:
+        nota = float(input("La nota debe ser un número entre 1 y 10. \n Ingresar Nota del parcial: "))
+    return nota
+
+def cargar_segunda_nota():
+    #cargar segunda nota del estudiante
+    nota = input("Ingresar Nota del segundo parcial: ")
+    while nota < 0 or nota >10:
+        nota = float (input("La nota debe ser un número entre 1 y 10. \n Ingresar Nota del parcial: "))
+    return nota

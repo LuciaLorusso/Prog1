@@ -1,10 +1,10 @@
-from VALIDAR_ESTUDIANTE import *
+from CARGAR_ESTUDIANTE import *
 
 def cargar_datos_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #
     i=1
     for i in range(30):
-        legajos.append(cargar_legajos())
+        legajos.append(cargar_legajo())
         nombres_y_apellidos.append(cargar_apellido())
         generos.append(cargar_genero())
         primeras_notas.append(cargar_nota())
