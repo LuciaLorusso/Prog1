@@ -35,25 +35,25 @@ while opcion != 7:
 
         case 3: 
             if legajos != []:
-                promedios = calcular_promedios_estudiantes(pri_notas, seg_notas)     
+                promedios = ccalcular_promedio_de_30_estudiantes(pri_notas, seg_notas)     
             else: 
                 print("Primero se debe cargar los datos de los estudiantes")    
 
         case 4: 
-            if legajos != []:
-                ordenar_estudiantes_por_promedio(legajos, nyaps, generos, pri_notas, seg_notas, promedios)
+            if promedios != []:
+                ordenar_estudiantes_por_promedio(promedios, legajos, nyaps, generos, pri_notas, seg_notas)
             else: 
                 print("Primero se debe cargar los datos de los estudiantes")
 
         case 5: 
             if promedios != []:
-                estudiante_mayor_promedio(legajos, nyaps, generos, pri_notas, seg_notas, promedios)
+                estudiante_mayor_promedio(promedios, legajos, nyaps, generos, pri_notas, seg_notas)
             else: 
                 print("Primero se debe calcular el promedio de los estudiantes")
 
         case 6: 
             if legajos != []:
-                buscar_estudiante_por_legajo(legajos, nyaps, generos, pri_notas, seg_notas, promedios)
+                buscar_estudiante_por_legajo(legajos, nyaps, generos, pri_notas, seg_notas)
             else: 
                 print("Primero se debe cargar los datos de los estudiantes")
 

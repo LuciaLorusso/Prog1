@@ -1,32 +1,67 @@
 from CARGAR_ESTUDIANTE import *
 
 def cargar_datos_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
-    #
-    i=1
+    #cargar datos de 30 estudiantes 
+
     for i in range(30):
         legajos.append(cargar_legajo())
-        nombres_y_apellidos.append(cargar_apellido())
+        nombres_y_apellidos.append(cargar_n_y_ap())
         generos.append(cargar_genero())
-        primeras_notas.append(cargar_nota())
-        segundas_notas.append(cargar_nota())
+        primeras_notas.append(cargar_primera_nota())
+        segundas_notas.append(cargar_segunda_nota())
                             
 
-def mostrar_informe_30_estudiantes(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
-    #
+def mostrar_n_estudiante (n:int, legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #mostrar los datos del estudiante número n de la lista
+    print (f"Legajo: {legajos[n]}")
+    print (f"Apellido y nombre: {nombres_y_apellidos[n]}")
+    print (f"Género: {generos[n]}")
+    print (f"Nota del primer parcial: {primeras_notas[n]}")
+    print (f"Nota del segundo parcial: {segundas_notas[n]}")
+
+def mostrar_informe_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #mostrar los datos de los 30 estudiantes
+    for i in range(30):
+        mostrar_n_estudiante (i, legajos, nombres_y_apellidos, generos, primeras_notas, segundas_notas)
+
+def calcular_promedio_de_30_estudiantes(primeras_notas:list, segundas_notas:list):
+    #Calcular promedio de los 30 estudiantes
+    promedios = []
+    for i in range(30):
+        promedio = (primeras_notas[i] + segundas_notas[i]) / 2
+        promedio = round(promedio, 2)
+        promedios.append(promedio) 
+    return promedios
+
+def ordenar_estudiantes_por_promedio(promedios:list, legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #ordena a los estudiantes de mayor a menor segun el promedio
+
     return
 
-def calcular_promedios_estudiantes(primeras_notas:list, segundas_notas:list):
-    #
-    return
+def estudiante_mayor_promedio(promedios:list, legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #Buscar el primer estudiante con mayor promedio
+    mayor_promedio = 0
+    for i in range(30):
+        if promedios[i] > mayor_promedio:
+            indice = i
+            mayor_promedio = promedios[i]
+    return mostrar_n_estudiante (indice, legajos, nombres_y_apellidos, generos, primeras_notas, segundas_notas)
 
-def  ordenar_estudiantes_por_promedio(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
-    #
-    return
+def buscar_estudiante_por_legajo(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
+    #Pedir el legajo y buscar el estudiante con dicho número
+    legajo = int(input("Indicar el número de legajo que desea buscar:"))
+    while legajo <= 0:
+        legajo = int(input("El dato ingresado no es correcto. Indicar el número de legajo: "))
 
-def estudiante_mayor_promedio(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
-    #
-    return
+    flag = False 
+    i = 0 
+    while i < len(legajos) and not flag: 
+        if legajo == legajos[i]: 
+            flag = True 
+            estudiante_nro = i 
+        else: i += 1
 
-def buscar_estudiante_por_legajo(nombres:list, apellidos:list, legajos:list, generos:list, primeras_notas:list, segundas_notas:list):
-    #
-    return
+    if flag:
+        mostrar_n_estudiante(estudiante_nro, legajos, nombres_y_apellidos, generos, primeras_notas, segundas_notas)    
+    else: 
+        print("No se encontró el legajo indicado")
