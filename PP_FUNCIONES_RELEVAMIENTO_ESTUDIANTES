@@ -33,6 +33,8 @@ def calcular_promedio_de_30_estudiantes(primeras_notas:list, segundas_notas:list
         promedio = (primeras_notas[i] + segundas_notas[i]) / 2
         promedio = round(promedio, 2)
         promedios.append(promedio) 
+    
+    print("Ya se realizó el calculo.")
     return promedios
 
 def ordenar_estudiantes_por_promedio(promedios:list, legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
@@ -47,6 +49,7 @@ def ordenar_estudiantes_por_promedio(promedios:list, legajos:list, nombres_y_ape
                 intercambio (j,promedios)
                 intercambio (j,primeras_notas)
                 intercambio (j,segundas_notas)
+    mostrar_informe_30_estudiantes(legajos, nombres_y_apellidos, generos, primeras_notas, segundas_notas)
 
 
 def intercambio (indice:int, lista:list):
