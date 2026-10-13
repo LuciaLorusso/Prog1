@@ -1,0 +1,39 @@
+from PP_FUNCIONES_RELEVAMIENTO_ESTUDIANTES import *
+
+print(" SISTEMA DE GESTIÓN ")
+print("MENÚ")
+print("1 - Cargar de datos de estudiantes")
+print("2 - Mostrar informe de estudiantes")
+print("3 - Calcular promedios")
+print("4 - Mostrar estudiantes ordenados por promedio (DESC)")
+print("5 - Mostrar estudiante(s) con mayor promedio")
+print("6 - Buscar estudiante por legajo")
+print("7 - Salir")
+
+opcion = int(input("Seleccione una opción del menú (1-7): "))
+
+while opcion != 7:
+    match opcion:
+        case 1: 
+            informe_estudiantes = cargar_datos_30_estudiantes()
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+        case 2: 
+            mostrar_informe_30_estudiantes(informe_estudiantes,cantidad_estudiantes)
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+        case 3: 
+            calcular_promedios_estudiantes(informe_estudiantes)
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+        case 4: 
+            ordenar_estudiantes_por_promedio(informe_estudiantes)
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+        case 5: 
+            estudiante_mayor_promedio(informe_estudiantes)
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+        case 6: 
+            buscar_estudiante_por_legajo(informe_estudiantes)
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+        case _:
+            print("Por favor, ingrese una opción válida")
+            opcion = int(input("Seleccione una opción del menú (1-7): "))
+
+print("FIN")
