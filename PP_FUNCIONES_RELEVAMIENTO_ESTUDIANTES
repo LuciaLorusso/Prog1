@@ -1,9 +1,10 @@
 from CARGAR_ESTUDIANTE import *
 
+
 def cargar_datos_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #cargar datos de 30 estudiantes 
 
-    for i in range(30):
+    for i in range(len(legajos)):
         legajos.append(cargar_legajo())
         nombres_y_apellidos.append(cargar_n_y_ap())
         generos.append(cargar_genero())
@@ -21,13 +22,13 @@ def mostrar_n_estudiante (n:int, legajos:list, nombres_y_apellidos:list, generos
 
 def mostrar_informe_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #mostrar los datos de los 30 estudiantes
-    for i in range(30):
+    for i in range(len(legajos)):
         mostrar_n_estudiante (i, legajos, nombres_y_apellidos, generos, primeras_notas, segundas_notas)
 
 def calcular_promedio_de_30_estudiantes(primeras_notas:list, segundas_notas:list):
     #Calcular promedio de los 30 estudiantes
     promedios = []
-    for i in range(30):
+    for i in range(len(primeras_notas)):
         promedio = (primeras_notas[i] + segundas_notas[i]) / 2
         promedio = round(promedio, 2)
         promedios.append(promedio) 
@@ -35,13 +36,28 @@ def calcular_promedio_de_30_estudiantes(primeras_notas:list, segundas_notas:list
 
 def ordenar_estudiantes_por_promedio(promedios:list, legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #ordena a los estudiantes de mayor a menor segun el promedio
+    tamanio = len(promedios)
+    for i in range(tamanio):
+        for j in range(0, tamanio - i - 1):
+            if promedios[j] < promedios[j+1]:
+                intercambio (i,legajo)
+                intercambio (i,nombres_y_apellidos)
+                intercambio (i,generos)
+                intercambio (i,promedios)
+                intercambio (i,primeras_notas)
+                intercambio (i,segundas_notas)
+            i += 1
 
-    return
+def intercambio (indice:int, lista:list):
+    #intercambiar elemento del indice i por la del inice i+1
+    aux = lista[indice]
+    lista[indice] = lista[indice+1]
+    lista[indice+1] = aux
 
 def estudiante_mayor_promedio(promedios:list, legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     #Buscar el primer estudiante con mayor promedio
     mayor_promedio = 0
-    for i in range(30):
+    for i in range(len(promedios)):
         if promedios[i] > mayor_promedio:
             indice = i
             mayor_promedio = promedios[i]
@@ -65,3 +81,6 @@ def buscar_estudiante_por_legajo(legajos:list, nombres_y_apellidos:list, generos
         mostrar_n_estudiante(estudiante_nro, legajos, nombres_y_apellidos, generos, primeras_notas, segundas_notas)    
     else: 
         print("No se encontró el legajo indicado")
+
+
+
