@@ -1,0 +1,25 @@
+
+def cargar_datos_30_estudiantes():
+    #
+    print(f"Se cargaron datos de {i} estudiantes")
+return
+
+def mostrar_informe_30_estudiantes (informe_estudiantes,cant:):
+    #
+return
+
+def calcular_promedios_estudiantes(informe_estudiantes):
+    #
+return
+
+def  ordenar_estudiantes_por_promedio(informe_estudiantes):
+    #
+return
+
+def estudiante_mayor_promedio(informe_estudiantes):
+    #
+return
+
+def buscar_estudiante_por_legajo(informe_estudiantes):
+    #
+return
