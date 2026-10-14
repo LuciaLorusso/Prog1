@@ -4,8 +4,6 @@ from FUNCIONES_RELEVAMIENTO_ESTUDIANTES import *
 # Menú de opciones del sistema de gestión de una institución educativa 
 # que releva los datos de 30 estudiantes
 
-
-
 print(" SISTEMA DE GESTIÓN ")
 print(" MENÚ ")
 print(" El primer paso debe ser cargar los datos de los estudiantes ")
