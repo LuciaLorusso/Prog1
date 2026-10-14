@@ -1,7 +1,6 @@
 import CARGAR_ESTUDIANTE
 from CARGAR_ESTUDIANTE import *
 
-
 def cargar_datos_30_estudiantes(legajos:list, nombres_y_apellidos:list, generos:list, primeras_notas:list, segundas_notas:list):
     '''
     '''#cargar datos de 30 estudiantes 
