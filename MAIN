@@ -1,0 +1,57 @@
+import FUNCIONES_RELEVAMIENTO_ESTUDIANTES
+from FUNCIONES_RELEVAMIENTO_ESTUDIANTES import *
+
+# Menú de opciones del sistema de gestión de una institución educativa 
+# que releva los datos de 30 estudiantes
+
+
+
+print(" SISTEMA DE GESTIÓN ")
+print(" MENÚ ")
+print(" El primer paso debe ser cargar los datos de los estudiantes ")
+mostrar_menu()
+
+opcion = int(input("Seleccione una opción del menú (1-7): "))
+
+while opcion != 7:
+    match opcion:
+        case 1: 
+            cargar_datos_30_estudiantes(legajos, nyaps, generos, pri_notas, seg_notas)
+
+        case 2: 
+            if len(legajos) != 0:
+                mostrar_informe_30_estudiantes(legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")      
+
+        case 3: 
+            if len(legajos) != 0:
+                promedios = calcular_promedio_de_30_estudiantes(pri_notas, seg_notas)     
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")    
+
+        case 4: 
+            if len(promedios) != 0:
+                ordenar_estudiantes_por_promedio(promedios, legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")
+
+        case 5: 
+            if len(promedios) != 0:
+                estudiante_mayor_promedio(promedios, legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe calcular el promedio de los estudiantes")
+
+        case 6: 
+            if len(legajos) != 0:
+                buscar_estudiante_por_legajo(legajos, nyaps, generos, pri_notas, seg_notas)
+            else: 
+                print("Primero se debe cargar los datos de los estudiantes")
+
+        case _:
+            print("Por favor, ingrese una opción válida")
+
+    mostrar_menu()
+    opcion = int(input("Seleccione una opción del menú (1-7): ")) 
+
+print("FIN")
